@@ -1,20 +1,12 @@
-import time  
 import random
-def inisi():
-    i=input("choose \"stone\" , \"paper\" or \"scissor\" ")
+def start():
+    user=int(input("choose \n1. for \"stone\" , \n2. for \"paper\" or \n3. for \"scissor\"\n "))
+    user=user-1
     print("my decission is")
-    des = ["scissor", "paper", "stone"]
+    game= ["scissor", "paper", "stone"]
     d=random.randint(0,2)
-    if(d==0):
-        m=des[d]
-        print(m)
-    elif(d==1):
-        m=des[d]
-        print(m)
-    else:
-        m=des[d]
-        print(m)
-    spsci(m,i)
+    print(game[d])
+    spsci(game[d],game[user])
 def spsci(m,i):
     if m==i:
         print("match draw")
@@ -28,12 +20,4 @@ def spsci(m,i):
             print("you won")
         else :
             print("better luck next time")
-def timfu():
-    c=2
-    while c:
-        m, s = divmod(c, 60)
-        timer = '{:02d}:{:02d}'.format(m, s)
-        time.sleep(1)
-        c -= 1
-inisi()
-timfu()
+start()
